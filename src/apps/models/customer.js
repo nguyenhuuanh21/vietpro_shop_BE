@@ -1,7 +1,7 @@
 const mongoose = require("../../common/init_mongodb")()
 const CustomerSchema = new mongoose.Schema(
     {
-        fullname: {
+        fullName: {
             type: String,
             required:true
         },

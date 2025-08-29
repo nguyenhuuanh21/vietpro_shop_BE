@@ -8,9 +8,9 @@
 <body>
 
     <p>
-        <b>Khách hàng:</b> <%=newBody.fullName%><br>
-        <b>Điện thoại:</b> <%=newBody.phone%><br>
-        <b>Địa chỉ:</b> <%=newBody.address%><br>
+        <b>Khách hàng:</b> <%=customer.fullName%><br>
+        <b>Điện thoại:</b> <%=customer.phone%><br>
+        <b>Địa chỉ:</b> <%=customer.address%><br>
     </p>
 
     <table border="1" cellspacing="0" cellpadding="10" bordercolor="#305eb3" width="100%">
@@ -25,7 +25,7 @@
                     <font color="#FFFFFF">Tổng tiền</font>
                 </b></td>
         </tr>
-        <%for(let item of newBody.items){%>
+        <%for(let item of items){%>
         <tr>
             <td width="70%"><%=item.name%></td>
             <td width="10%"><%=item.qty%></td>
@@ -35,7 +35,7 @@
         <tr>
             <td colspan="2" width="70%"></td>
             <td width="20%"><b>
-                    <font color="#FF0000"><%=newBody.items.reduce((total,item)=>{total+=item.price*item.qty; return total},0)%></font>
+                    <font color="#FF0000"><%=items.reduce((total,item)=>{total+=item.price*item.qty; return total},0)%></font>
                 </b></td>
         </tr>
     </table>

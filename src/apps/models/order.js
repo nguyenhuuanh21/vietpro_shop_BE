@@ -1,26 +1,18 @@
 const mongoose = require("../../common/init_mongodb")()
 const OrderSchema = new mongoose.Schema(
     {
+        customerId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Customers",
+            required: true
+        },
         totalPrice: {
             type: Number,
             required: true
         },
-        fullName: {
-            type: String,
-            required: true
-        },
-        address: {
-            type: String,
-            required: true
-        },
-
-        email: {
-            type: String,
-            required: true
-        },
-        phone: {
-            type: String,
-            required: true
+        status: {
+            type: String,//shipping,delivered,cancelled 
+            default: "shipping"
         },
         items: [
             {
